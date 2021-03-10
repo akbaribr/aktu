@@ -1,14 +1,11 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import rospy
 import time
 from std_msgs.msg import Float64, Float32, Int32, Bool
-from std_srvs.srv import Trigger, TriggerResponse
 from geometry_msgs.msg import TwistStamped
 from mavros_msgs.msg import VFR_HUD, OverrideRCIn
 from mavros_msgs.srv import SetMode
-
-from physics.free_fall import calc_horizontal_travel_distance
 
 LOOP_RATE = 1
 TARGET_RADIUS = 1.2
@@ -22,8 +19,7 @@ if __name__ == '__main__':
 
   # initialize target loop rate
   rate = rospy.Rate(LOOP_RATE)
-
-
+  
   # initializing publishers
   rospy.loginfo('Initializing publishers...')
 
